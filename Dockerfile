@@ -7,4 +7,4 @@ WORKDIR /jgc
 RUN npm install && \
     npm run build
 
-ENTRYPOINT ["npm run start"]
+ENTRYPOINT ["npm", "run" "start"]
