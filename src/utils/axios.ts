@@ -1,6 +1,6 @@
 import { HttpError } from "@/types";
 
-import axios from "axios";
+import axios, { AxiosError, isAxiosError } from "axios";
 
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -11,7 +11,14 @@ axiosInstance.interceptors.response.use(
   (response) => {
     return response;
   },
-  (error) => {
+  (error): Promise<HttpError> => {
+    if (isAxiosError(error)) {
+      return Promise.reject({
+        ...error,
+        message: error.message,
+        statusCode: error.code,
+      });
+    }
     const customError: HttpError = {
       ...error,
       message: error.response?.data?.message,
