@@ -19,6 +19,7 @@
 /.vscode
 .DS_Store
 *.pem
+*:Zone.Identifier
 
 # debug
 npm-debug.log*
