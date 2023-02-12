@@ -2,7 +2,10 @@ import { HttpError } from "@/types";
 
 import axios from "axios";
 
-const axiosInstance = axios.create({ withCredentials: true });
+const axiosInstance = axios.create({
+  baseURL: process.env.API_URL,
+  withCredentials: true,
+});
 
 axiosInstance.interceptors.response.use(
   (response) => {
