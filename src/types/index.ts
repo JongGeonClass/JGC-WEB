@@ -10,3 +10,8 @@ export interface Category {
   id: string;
   name: string;
 }
+
+export interface HttpError extends Record<string, any> {
+  message: string;
+  statusCode: number;
+}
