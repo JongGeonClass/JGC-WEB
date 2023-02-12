@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import CustomPBVHero from "./CustomPBVHero";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import InteriorHero from "./InteriorHero";
 
 const JGCLandingPage: NextPage = () => {

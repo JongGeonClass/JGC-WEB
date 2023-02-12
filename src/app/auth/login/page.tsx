@@ -7,16 +7,16 @@ import LoginCard from "./LoginCard";
 
 const JGCLandingPage: NextPage = () => {
   return (
-    <div className="w-full overflow-hidden bg-white">
+    <div className="relative bg-white w-full h-[67.5rem] overflow-hidden flex flex-col items-start justify-start">
       <Header />
-      <div className="relative flex h-[56.88rem] flex-1 justify-center self-stretch overflow-hidden bg-gainsboro-100">
+      <div className="self-stretch flex-1 relative bg-gainsboro-100 overflow-hidden">
         <Image
-          className="absolute top-[0rem] left-[0rem] z-auto h-[56.88rem] w-[120rem] object-cover"
+          className="absolute top-[0rem] left-[0rem] h-[56.88rem] w-[120rem] object-cover"
           alt=""
           src={Background}
         />
         <form
-          className="flex h-[50rem] w-[37.5rem] items-center justify-center"
+          className="absolute top-[3.44rem] left-[41.25rem] w-[37.5rem] h-[50rem]"
           method="post"
         >
           <LoginCard />

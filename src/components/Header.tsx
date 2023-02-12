@@ -5,7 +5,10 @@ const Header: NextPage = () => {
   return (
     <div className="box-border flex w-[120rem] flex-row items-start justify-start gap-[0.63rem] overflow-hidden p-[0.63rem] text-left font-noto-sans-kr text-[1.25rem] text-black">
       <div className="flex flex-row items-center justify-start gap-[3.13rem] overflow-hidden py-[0.63rem] px-[1.88rem]">
-        <button className="relative h-[4.38rem] w-[21rem] shrink-0 cursor-pointer bg-[transparent] bg-[url(../../public/logo.png)] bg-cover bg-[top] bg-no-repeat p-0 [border:none]" />
+        <Link
+          className="relative h-[4.38rem] w-[21rem] shrink-0 cursor-pointer bg-[transparent] bg-[url(../../public/logo.png)] bg-cover bg-[top] bg-no-repeat p-0 [border:none]"
+          href=""
+        />
         <Link
           className="relative text-[inherit] [text-decoration:none]"
           href="products"
