@@ -3,7 +3,7 @@ import { HttpError } from "@/types";
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.API_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   withCredentials: true,
 });
 
