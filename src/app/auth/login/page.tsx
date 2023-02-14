@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Background from "public/background-temp.png";
-import LoginCard from "./LoginCard";
+import LoginForm from "./LoginCard";
 
 const JGCLandingPage: NextPage = () => {
   return (
@@ -15,12 +15,7 @@ const JGCLandingPage: NextPage = () => {
           alt=""
           src={Background}
         />
-        <form
-          className="absolute top-[3.44rem] left-[41.25rem] w-[37.5rem] h-[50rem]"
-          method="post"
-        >
-          <LoginCard />
-        </form>
+        <LoginForm />
       </div>
       <Footer />
     </div>
