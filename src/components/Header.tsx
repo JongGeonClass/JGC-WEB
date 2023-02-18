@@ -1,12 +1,10 @@
-"use client";
-
-import { useAuth } from "@/hooks/useAuth";
+import { isAuthenticated } from "@/utils/auth";
 import type { NextPage } from "next";
 import Link from "next/link";
+import LogoutWrapper from "./LogoutWrapper";
 
 const Header: NextPage = () => {
-  const authData = useAuth();
-  console.log(authData);
+  const authData = isAuthenticated();
   return (
     <div className="box-border flex w-full flex-row items-start justify-start gap-[0.63rem] p-[0.63rem] text-left font-noto-sans-kr text-[1.25rem] text-black">
       <div className="flex flex-row items-center justify-start gap-[3.13rem] overflow-hidden py-[0.63rem] px-[1.88rem]">
@@ -42,12 +40,7 @@ const Header: NextPage = () => {
             >
               마이 페이지
             </Link>
-            <Link
-              className="relative text-[inherit] [text-decoration:none]"
-              href="/"
-            >
-              로그아웃
-            </Link>
+            <LogoutWrapper />
           </>
         ) : (
           <>
