@@ -1,4 +1,5 @@
 import { CartItem } from "@/types";
+import { addCartDto } from "@/types/product.dto";
 import { axiosInstance } from "@/utils/axios";
 import { useQuery } from "@tanstack/react-query";
 
@@ -11,4 +12,12 @@ export const useCart = () => {
     queryKey: ["cart"],
     queryFn: () => fetchCart(),
   });
+};
+
+export const addCart = ({ productId: product_id, amount }: addCartDto) => {
+  return axiosInstance
+    .post(`/cart`, { product_id, amount })
+    .then((response) => {
+      response.data;
+    });
 };

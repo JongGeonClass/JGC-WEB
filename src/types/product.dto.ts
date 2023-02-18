@@ -9,3 +9,8 @@ export interface useProductsDto {
   categoryId: number;
   pagination: PaginationDto;
 }
+
+export interface addCartDto {
+  productId: number;
+  amount: number;
+}
