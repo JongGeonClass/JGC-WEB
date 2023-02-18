@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Background from "public/background-temp.png";
-import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
 const JGCLandingPage: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const JGCLandingPage: NextPage = () => {
           alt=""
           src={Background}
         />
-        <LoginForm />
+        <SignupForm />
       </div>
       <Footer />
     </div>

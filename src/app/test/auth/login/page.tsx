@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import axios from "axios";
 import { userLoginDto } from "@/types";
+import { axiosInstance } from "@/utils/axios";
 
 const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState<userLoginDto>({
@@ -17,8 +17,8 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    axios
-      .post("/api/auth/login", formData)
+    axiosInstance
+      .post("/auth/login", formData)
       .then((res) => {
         console.log(res);
       })

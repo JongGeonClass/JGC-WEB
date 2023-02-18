@@ -3,6 +3,7 @@
 import { axiosInstance } from "@/utils/axios";
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Ellipse1 from "public/svg/Ellipse1.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -12,6 +13,7 @@ type Inputs = {
 };
 
 const LoginForm: NextPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -20,15 +22,18 @@ const LoginForm: NextPage = () => {
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) =>
     axiosInstance
-      .post(`/api/auth/login`, { data })
-      .then((response) => response.data);
+      .post(`/auth/login`, data)
+      .then((response) => {
+        router.push("/");
+      })
+      .catch((error) => console.error(error));
   return (
     <form
-      className="absolute top-[3.44rem] left-[41.25rem] w-[37.5rem] h-[50rem]"
+      className="absolute top-[3.44rem] left-[41.25rem] w-[37.5rem] h-[50rem] rounded-sm"
       method="post"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="absolute top-[1.56rem] left-[1.56rem] rounded-base bg-white shadow-[0px_5px_6px_3px_rgba(0,_0,_0,_0.25)] w-[34.38rem] h-[46.88rem]">
+      <div className="absolute top-[1.56rem] left-[1.56rem] rounded-sm bg-white shadow-[0px_5px_6px_3px_rgba(0,_0,_0,_0.25)] w-[34.38rem] h-[46.88rem]">
         <div className="absolute top-[calc(50%_-_311px)] left-[calc(50%_-_260px)] w-[32.5rem] h-[37.5rem] overflow-hidden flex flex-col pt-[1.25rem] px-[0.63rem] pb-[0rem] box-border items-center justify-start gap-[0.75rem] text-left text-[0.75rem] text-darkturquoise font-noto-sans-kr">
           <b className="self-stretch relative text-[1.88rem] tracking-[0.46px] leading-[1.63rem] uppercase inline-block text-center h-[5rem] shrink-0">
             로그인
@@ -38,7 +43,7 @@ const LoginForm: NextPage = () => {
               className="pl-2.5 border-0 bg-gainsboro-200 rounded-small box-border h-10 w-[25rem] flex flex-col items-start justify-start border-b-[0.5px] border-solid border-black"
               type="text"
               maxLength={30}
-              minLength={6}
+              minLength={4}
               placeholder="아이디를 올바르게 입력해주세요."
               required
               {...register("username", { required: true })}
