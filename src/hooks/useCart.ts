@@ -4,7 +4,9 @@ import { axiosInstance } from "@/utils/axios";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchCart = (): Promise<CartItem[]> => {
-  return axiosInstance.get(`/cart`).then((response) => response.data.carts);
+  return axiosInstance
+    .get(`/product/carts`)
+    .then((response) => response.data.carts);
 };
 
 export const useCart = () => {
@@ -16,7 +18,23 @@ export const useCart = () => {
 
 export const addCart = ({ productId: product_id, amount }: addCartDto) => {
   return axiosInstance
-    .post(`/cart`, { product_id, amount })
+    .post(`/product/add-to-cart`, { product_id, amount })
+    .then((response) => {
+      response.data;
+    });
+};
+
+export const updateCart = ({ productId: product_id, amount }: addCartDto) => {
+  return axiosInstance
+    .put(`/product/update-cart-amount`, { product_id, amount })
+    .then((response) => {
+      response.data;
+    });
+};
+
+export const deleteCartItem = (productId: number) => {
+  return axiosInstance
+    .delete(`/product/delete-cart-product`, { data: { productId: productId } })
     .then((response) => {
       response.data;
     });
