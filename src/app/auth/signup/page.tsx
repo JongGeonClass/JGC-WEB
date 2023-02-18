@@ -5,7 +5,7 @@ import Image from "next/image";
 import Background from "public/background-temp.png";
 import SignupForm from "./SignupForm";
 
-const JGCLandingPage: NextPage = () => {
+const JGCLandingPage = () => {
   return (
     <div className="relative bg-white w-full h-[67.5rem] overflow-hidden flex flex-col items-start justify-start">
       <Header />

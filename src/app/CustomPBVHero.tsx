@@ -20,14 +20,14 @@ const CustomPBVHero: NextPage = () => {
           </p>
           <p className="m-0">개지리는 뭉종건</p>
         </div>
-        <button className="flex cursor-pointer flex-col items-center justify-center overflow-hidden rounded border-[1px] border-solid border-tomato bg-[transparent] py-[0.5rem] px-[1.38rem]">
+        <button className="flex cursor-pointer flex-col items-center justify-center overflow-hidden rounded border-[1px] border-solid border-tomato-100 bg-[transparent] py-[0.5rem] px-[1.38rem]">
           <div className="flex flex-row items-center justify-center gap-[0.5rem]">
             <Image
               className="relative hidden h-[1.38rem] w-[1.13rem] shrink-0"
               alt=""
               src={HeroButton}
             />
-            <div className="relative text-left font-components-button-large1 text-[0.94rem] font-medium uppercase leading-[1.63rem] tracking-[0.46px] text-tomato">
+            <div className="relative text-left font-components-button-large1 text-[0.94rem] font-medium uppercase leading-[1.63rem] tracking-[0.46px] text-tomato-200">
               개지리는 JGC 버튼
             </div>
             <Image
