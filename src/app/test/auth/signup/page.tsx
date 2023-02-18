@@ -20,7 +20,7 @@ const SignupForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     axiosInstance
-      .post("/api/auth/signup", formData)
+      .post("/auth/signup", formData)
       .then((res) => {
         console.log(res);
       })

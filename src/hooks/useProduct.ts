@@ -1,17 +1,17 @@
-import { Category, Product } from "@/types";
+import { Category, HttpError, Product } from "@/types";
 import { useProductsDto } from "@/types/product.dto";
+import { axiosInstance } from "@/utils/axios";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 const fetchProduct = (id: string): Promise<Product> => {
-  return axios.get(`/products/${id}`).then((response) => response.data);
+  return axiosInstance.get(`/products/${id}`).then((response) => response.data);
 };
 
 const fetchProducts = ({
   categoryId,
   pagination,
 }: useProductsDto): Promise<Product[]> => {
-  return axios
+  return axiosInstance
     .get(
       `/products?category=${categoryId}&current=${pagination.currentPage}&size=${pagination.pageSize}`
     )
