@@ -1,12 +1,27 @@
 "use client";
 
-import { useAuth } from "@/hooks/useAuth";
+import { isAuthenticated } from "@/utils/auth";
+import { axiosInstance } from "@/utils/axios";
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { MouseEventHandler } from "react";
 
 const Header: NextPage = () => {
-  const authData = useAuth();
-  console.log(authData);
+  const authData = isAuthenticated();
+  const router = useRouter();
+
+  const onLogout: MouseEventHandler<HTMLAnchorElement> = (event) => {
+    axiosInstance
+      .post("/auth/logout")
+      .then((res) => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div className="box-border flex w-full flex-row items-start justify-start gap-[0.63rem] p-[0.63rem] text-left font-noto-sans-kr text-[1.25rem] text-black">
       <div className="flex flex-row items-center justify-start gap-[3.13rem] overflow-hidden py-[0.63rem] px-[1.88rem]">
@@ -44,6 +59,7 @@ const Header: NextPage = () => {
             </Link>
             <Link
               className="relative text-[inherit] [text-decoration:none]"
+              onClick={onLogout}
               href="/"
             >
               로그아웃

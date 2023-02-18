@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 interface AuthData {
   isAuthenticated: boolean;
   userData: {
@@ -11,26 +9,22 @@ interface AuthData {
   } | null;
 }
 
-export const useAuth = (): AuthData => {
-  const [authData, setAuthData] = useState<AuthData>({
+export const isAuthenticated = (): AuthData => {
+  const cookieValue = getCookieValue("JGC_PUBLIC_SESSION");
+  if (cookieValue) {
+    try {
+      const decodedValue = Buffer.from(cookieValue, "base64").toString();
+      const userData = JSON.parse(decodedValue);
+      return { isAuthenticated: true, userData };
+    } catch (error) {
+      console.error("Error decoding JGC_PUBLIC_SESSION cookie:", error);
+    }
+  }
+
+  return {
     isAuthenticated: false,
     userData: null,
-  });
-
-  useEffect(() => {
-    const cookieValue = getCookieValue("JGC_PUBLIC_SESSION");
-    if (cookieValue) {
-      try {
-        const decodedValue = Buffer.from(cookieValue, "base64").toString();
-        const userData = JSON.parse(decodedValue);
-        setAuthData({ isAuthenticated: true, userData });
-      } catch (error) {
-        console.error("Error decoding JGC_PUBLIC_SESSION cookie:", error);
-      }
-    }
-  }, []);
-
-  return authData;
+  };
 };
 
 const getCookieValue = (name: string): string | null => {

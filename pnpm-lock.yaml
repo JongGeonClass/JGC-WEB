@@ -4,6 +4,7 @@ specifiers:
   '@emotion/react': ^11.10.6
   '@emotion/styled': ^11.10.6
   '@faker-js/faker': ^7.6.0
+  '@mui/base': 5.0.0-alpha.118
   '@mui/material': ^5.11.9
   '@next/font': 13.1.6
   '@tanstack/react-query': ^4.24.4
@@ -27,6 +28,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.6_3stiutgnnbnfnf3uowm5cip22i
   '@emotion/styled': 11.10.6_zjrrpqmb4rf5frur5mrydkybnq
+  '@mui/base': 5.0.0-alpha.118_5ndqzdd6t4rivxsukjv3i3ak2q
   '@mui/material': 5.11.9_yxvt43keouwjyeqzti2jjtf4mu
   '@next/font': 13.1.6
   '@tanstack/react-query': 4.24.4_biqbaboplfbrettd7655fr4n2y
