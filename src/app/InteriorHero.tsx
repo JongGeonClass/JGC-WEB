@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroButton from "public/svg/HeroButton.svg";
 import Chevron2 from "public/svg/Chevron2.svg";
 import InteriorHeroImage from "public/InteriorHeroImage.png";
+import Link from "next/link";
 
 const InteriorHero: NextPage = () => {
   return (
@@ -25,7 +26,10 @@ const InteriorHero: NextPage = () => {
           </p>
           <p className="m-0">개지리는 뭉종건</p>
         </div>
-        <div className="flex flex-col items-center justify-center overflow-hidden rounded border-[1px] border-solid border-tomato-100 py-[0.5rem] px-[1.38rem] font-components-button-large1 text-[0.94rem] text-tomato-200">
+        <Link
+          className="flex flex-col items-center justify-center overflow-hidden rounded border-[1px] border-solid border-tomato-100 py-[0.5rem] px-[1.38rem] font-components-button-large1 text-[0.94rem] text-tomato-200 [text-decoration:none]"
+          href="products"
+        >
           <div className="flex flex-row items-center justify-center gap-[0.5rem]">
             <Image
               className="relative h-[1.5rem] w-[1.5rem] shrink-0"
@@ -41,7 +45,7 @@ const InteriorHero: NextPage = () => {
               src={HeroButton}
             />
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
