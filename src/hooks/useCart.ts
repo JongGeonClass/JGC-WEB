@@ -1,7 +1,7 @@
 import { CartItem } from "@/types";
 import { addCartDto } from "@/types/product.dto";
 import { axiosInstance } from "@/utils/axios";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const fetchCart = (): Promise<CartItem[]> => {
   return axiosInstance
@@ -10,6 +10,7 @@ const fetchCart = (): Promise<CartItem[]> => {
 };
 
 export const useCart = () => {
+  const queryClient = useQueryClient();
   return useQuery<CartItem[]>({
     queryKey: ["cart"],
     queryFn: () => fetchCart(),
