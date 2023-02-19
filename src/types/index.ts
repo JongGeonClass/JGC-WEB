@@ -29,3 +29,4 @@ export interface HttpError extends Record<string, any> {
 }
 
 export * from "./user.dto";
+export * from "./product.dto";

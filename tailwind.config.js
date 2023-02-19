@@ -14,6 +14,7 @@ module.exports = {
           200: "rgba(255, 255, 255, 0.65)",
           300: "rgba(0, 0, 0, 0.4)",
         },
+        darkgray: "#999",
         "text-secondary1": "rgba(0, 0, 0, 0.6)",
       },
       fontFamily: {
