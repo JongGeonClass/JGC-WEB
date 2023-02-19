@@ -36,7 +36,7 @@ const Header: NextPage = () => {
           <>
             <Link
               className="relative text-[inherit] [text-decoration:none]"
-              href="user"
+              href="cart"
             >
               마이 페이지
             </Link>
