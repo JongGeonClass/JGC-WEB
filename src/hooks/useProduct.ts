@@ -1,7 +1,7 @@
 import { Category, HttpError, Product } from "@/types";
 import { ProductsListDto, useProductsDto } from "@/types/product.dto";
 import { axiosInstance } from "@/utils/axios";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const fetchProduct = (id: string): Promise<Product> => {
   return axiosInstance.get(`/products/${id}`).then((response) => response.data);
@@ -23,6 +23,7 @@ const fetchProducts = ({
 };
 
 export const useProduct = (id: string) => {
+  const queryClient = useQueryClient();
   return useQuery<Product>({
     queryKey: ["product", id],
     queryFn: () => fetchProduct(id),
@@ -30,6 +31,7 @@ export const useProduct = (id: string) => {
 };
 
 export const useProducts = (dto: useProductsDto) => {
+  const queryClient = useQueryClient();
   return useQuery<ProductsListDto>({
     queryKey: ["products", dto],
     queryFn: () => fetchProducts(dto),
