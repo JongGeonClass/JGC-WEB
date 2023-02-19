@@ -65,12 +65,6 @@ const CartList = () => {
       </>
     );
   }
-  return (
-    <>
-      <ProductContainer product_name="개지리는 종건급 상품 2" />
-      <ProductContainer product_name="개지리는 종건급 상품 3" />
-    </>
-  );
 };
 
 export default CartList;
