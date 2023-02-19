@@ -1,13 +1,18 @@
-import { Category } from ".";
+import { Category, Product } from ".";
 
 export interface PaginationDto {
-  currentPage: number;
+  page: number;
   pageSize: number;
 }
 
 export interface useProductsDto {
-  categoryId: number;
+  categoryId?: number;
   pagination: PaginationDto;
+}
+
+export interface ProductsListDto {
+  products: Product[];
+  max_pagesize: number;
 }
 
 export interface addCartDto {
