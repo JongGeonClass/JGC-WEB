@@ -4,7 +4,9 @@ COPY . /jgc
 
 WORKDIR /jgc
 
-RUN npm install && \
-    npm run build
+RUN npm install -g pnpm
 
-ENTRYPOINT ["npm", "run", "start"]
+RUN pnpm install && \
+    pnpm run build
+
+ENTRYPOINT ["pnpm", "run", "start"]
