@@ -13,7 +13,7 @@ export interface Product {
 
 export interface Category {
   id: number;
-  brand_name: string;
+  name: string;
   description: string;
 }
 

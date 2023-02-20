@@ -14,7 +14,7 @@ const fetchProducts = ({
   return axiosInstance
     .get(`/product/products`, {
       params: {
-        categoryId,
+        category_id: categoryId,
         page: pagination.page,
         pagesize: pagination.pageSize,
       },
