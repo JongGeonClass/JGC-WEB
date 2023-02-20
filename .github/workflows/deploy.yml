@@ -19,7 +19,7 @@ jobs:
         echo "${{ secrets.DOT_ENV_PRODUCT }}" > $GITHUB_WORKSPACE/.env.production
     
     - name: archive jgc_web
-      run: tar cvfz $GITHUB_WORKSPACE/jgc_web.tar.gz * $GITHUB_WORKSPACE/.env.production
+      run: tar cvfz $GITHUB_WORKSPACE/jgc_web.tar.gz * .env.production
       
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
