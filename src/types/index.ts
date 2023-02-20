@@ -1,14 +1,20 @@
 export interface Product {
   id: number;
+  brand_id: number;
+  brand_name: string;
+  categories: Category[];
   name: string;
   price: number;
   count: number;
-  description: string;
+  title_image_s3: string;
+  description_s3: string;
+  created_time: string;
 }
 
 export interface Category {
   id: number;
   name: string;
+  description: string;
 }
 
 export interface CartItem {

@@ -1,54 +1,41 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import testimg1 from "public/testimg-1.png";
-const ProductListContainer: NextPage = () => {
+import { Category, PaginationDto } from "@/types";
+import React from "react";
+import ProductList from "./ProductList";
+
+const ProductListContainer = ({
+  title,
+  accent,
+  pagination,
+  stack,
+  category,
+}: {
+  title: string;
+  accent?: boolean;
+  pagination: PaginationDto;
+  stack?: boolean;
+  category?: Category;
+}) => {
+  const titleArray = title.split(" ");
   return (
-    <div className="self-stretch overflow-hidden flex flex-row py-[0.63rem] px-[0.94rem] items-center justify-center gap-[3.13rem] text-left text-[1.25rem] text-black font-noto-sans-kr">
-      <div className="overflow-hidden flex flex-col p-[0.63rem] items-center justify-start gap-[0.63rem] cursor-pointer">
-        <Image
-          className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
-          alt=""
-          src={testimg1}
-        />
-        <div className="overflow-hidden flex flex-col items-center justify-start gap-[0.94rem]">
-          <div className="relative font-medium">상품1</div>
-          <div className="relative text-[1rem]">상품에 대한 설명 짧게</div>
-        </div>
+    <>
+      <div className="relative font-medium text-black">
+        {titleArray.map((cs, idx) => {
+          return (
+            <span
+              key={idx}
+              className={idx == 0 && accent ? "text-tomato-100" : ""}
+            >{`${cs} `}</span>
+          );
+        })}
       </div>
-      <div className="overflow-hidden flex flex-col p-[0.63rem] items-center justify-start gap-[0.63rem]">
-        <Image
-          className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
-          alt=""
-          src={testimg1}
+      <ProductList pagination={pagination} categoryId={category?.id} />
+      {stack && (
+        <ProductList
+          pagination={{ ...pagination, page: pagination.page + 1 }}
+          categoryId={category?.id}
         />
-        <div className="overflow-hidden flex flex-col items-center justify-start gap-[0.94rem]">
-          <div className="relative font-medium">상품2</div>
-          <div className="relative text-[1rem]">상품에 대한 설명 짧게</div>
-        </div>
-      </div>
-      <div className="overflow-hidden flex flex-col p-[0.63rem] items-center justify-start gap-[0.63rem]">
-        <Image
-          className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
-          alt=""
-          src={testimg1}
-        />
-        <div className="overflow-hidden flex flex-col items-center justify-start gap-[0.94rem]">
-          <div className="relative font-medium">상품3</div>
-          <div className="relative text-[1rem]">상품에 대한 설명 짧게</div>
-        </div>
-      </div>
-      <div className="overflow-hidden flex flex-col p-[0.63rem] items-center justify-start gap-[0.63rem]">
-        <Image
-          className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
-          alt=""
-          src={testimg1}
-        />
-        <div className="overflow-hidden flex flex-col items-center justify-start gap-[0.94rem]">
-          <div className="relative font-medium">상품4</div>
-          <div className="relative text-[1rem]">상품에 대한 설명 짧게</div>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

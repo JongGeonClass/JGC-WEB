@@ -8,7 +8,7 @@ const dummyItem: CartItem = {
   id: 1,
   brand_id: 1,
   brand_name: "test",
-  categories: [{ id: 1, name: "test" }],
+  categories: [{ id: 1, name: "test", description: "" }],
   product_name: "test",
   product_price: 10000,
   amount: 1,
