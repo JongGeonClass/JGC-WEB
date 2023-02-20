@@ -12,8 +12,15 @@ const Main = () => {
       <div className="self-stretch overflow-hidden flex flex-row p-[0.63rem] items-start justify-start gap-[0.63rem]">
         <CategoryList title={"인테리어 상품"} />
         <div className="flex-1 overflow-hidden flex flex-col py-[0.63rem] px-[2.5rem] items-start justify-start gap-[0.63rem] text-[3.13rem] text-tomato-100">
-          <ProductListContainer title="추천 상품" accent />
-          <ProductListContainer title="상품 목록" />
+          <ProductListContainer
+            title="추천 상품"
+            pagination={{ page: 1, pageSize: 4 }}
+            accent
+          />
+          <ProductListContainer
+            title="상품 목록"
+            pagination={{ page: 1, pageSize: 4 }}
+          />
         </div>
       </div>
     </QueryClientProvider>

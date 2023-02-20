@@ -1,4 +1,6 @@
 "use client";
+import { useProducts } from "@/hooks/useProduct";
+import { PaginationDto } from "@/types";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ProductList from "./ProductList";
@@ -6,9 +8,11 @@ import ProductList from "./ProductList";
 const ProductListContainer = ({
   title,
   accent,
+  pagination,
 }: {
   title: string;
   accent?: boolean;
+  pagination: PaginationDto;
 }) => {
   const titleArray = title.split(" ");
   return (
@@ -23,7 +27,7 @@ const ProductListContainer = ({
           );
         })}
       </div>
-      <ProductList pagination={{ page: 1, pageSize: 3 }} />
+      <ProductList pagination={pagination} />
     </>
   );
 };

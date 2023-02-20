@@ -13,7 +13,8 @@ export interface Product {
 
 export interface Category {
   id: number;
-  name: string;
+  brand_name: string;
+  description: string;
 }
 
 export interface CartItem {
