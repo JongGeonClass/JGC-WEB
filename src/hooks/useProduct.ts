@@ -4,7 +4,9 @@ import { axiosInstance } from "@/utils/axios";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const fetchProduct = (id: string): Promise<Product> => {
-  return axiosInstance.get(`/products/${id}`).then((response) => response.data);
+  return axiosInstance
+    .get(`/product/product`, { params: { product_id: id } })
+    .then((response) => response.data.product);
 };
 
 const fetchProducts = ({

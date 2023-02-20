@@ -1,9 +1,10 @@
 "use client";
 import { useProducts } from "@/hooks/useProduct";
-import { ProductsListDto, useProductsDto } from "@/types";
+import { useProductsDto } from "@/types";
 import { Alert, CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import testimg1 from "public/testimg-1.png";
 const ProductList: NextPage<useProductsDto> = (dto: useProductsDto) => {
   const { data, isLoading, isError } = useProducts(dto);
@@ -24,9 +25,10 @@ const ProductList: NextPage<useProductsDto> = (dto: useProductsDto) => {
     <div className="self-stretch overflow-hidden flex flex-row py-[0.63rem] px-[0.94rem] items-center justify-center gap-[3.13rem] text-left text-[1.25rem] text-black font-noto-sans-kr">
       {data?.products.map((product, idx) => {
         return (
-          <div
+          <Link
             className="overflow-hidden flex flex-col p-[0.63rem] items-center justify-start gap-[0.63rem] cursor-pointer"
             key={idx}
+            href={`/products/${product.id}`}
           >
             <Image
               className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
@@ -37,7 +39,7 @@ const ProductList: NextPage<useProductsDto> = (dto: useProductsDto) => {
               <div className="relative font-medium">{product.name}</div>
               <div className="relative text-[1rem]">{product.brand_name}</div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>

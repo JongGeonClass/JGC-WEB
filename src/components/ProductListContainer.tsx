@@ -1,7 +1,4 @@
-"use client";
-import { useProducts } from "@/hooks/useProduct";
 import { Category, PaginationDto } from "@/types";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ProductList from "./ProductList";
 
