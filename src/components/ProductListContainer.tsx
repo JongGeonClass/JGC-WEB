@@ -28,11 +28,11 @@ const ProductListContainer = ({
           );
         })}
       </div>
-      <ProductList pagination={pagination} categoryId={category?.id} />
+      <ProductList pagination={pagination} category={category} />
       {stack && (
         <ProductList
           pagination={{ ...pagination, page: pagination.page + 1 }}
-          categoryId={category?.id}
+          category={category}
         />
       )}
     </>

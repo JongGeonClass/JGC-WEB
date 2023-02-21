@@ -29,6 +29,17 @@ export interface CartItem {
   created_time: string;
 }
 
+export interface Review {
+  id: number;
+  product_id: number;
+  user_id: number;
+  nickname: string;
+  score: number;
+  content: string;
+  is_parent: boolean;
+  created_time: string;
+}
+
 export interface HttpError extends Record<string, any> {
   message: string;
   statusCode: number;
