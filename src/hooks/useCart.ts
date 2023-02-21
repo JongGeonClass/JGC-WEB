@@ -21,7 +21,7 @@ export const addCart = ({ productId: product_id, amount }: addCartDto) => {
   return axiosInstance
     .post(`/product/add-to-cart`, { product_id, amount })
     .then((response) => {
-      response.data;
+      response;
     });
 };
 
