@@ -1,4 +1,4 @@
-import background from "public/background-temp.png";
+import background from "public/background-banner-temp.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
@@ -10,11 +10,11 @@ const JGCProduct = () => {
       <Header />
       <div className="self-stretch relative h-[20rem] shrink-0 overflow-hidden text-[2.5rem] text-white">
         <Image
-          className="absolute top-[calc(50%_-_160px)] left-[calc(50%_-_960px)] w-[160rem] h-[20rem] object-cover"
+          className="absolute top-[calc(50%_-_160px)]  w-[160rem] h-[20rem] object-cover"
           alt=""
           src={background}
         />
-        <div className="absolute top-[8.13rem] left-[46.56rem] font-light">
+        <div className="absolute top-[8.13rem] left-[calc(50%_-_160px)] font-light">
           나만을 위한 PBV 인테리어
         </div>
       </div>

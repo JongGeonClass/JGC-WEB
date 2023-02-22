@@ -65,19 +65,11 @@ const ProductViewContainer: NextPage<{
       alert("구매할 수 없는 수량입니다.");
     }
   };
-  if (
-    productData &&
-    isValidUrl(productData.title_image_s3) &&
-    !productIsFetchedAfterMount
-  ) {
-    if (isValidUrl(productData.title_image_s3))
-      setProductImage(productData.title_image_s3);
-    if (isValidUrl(productData.description_s3)) {
-      axiosInstance
-        .get(productData.description_s3)
-        .then((res) => setProductDescription(res.data))
-        .catch((err) => console.log(err));
-    }
+  if (productData && isValidUrl(productData.description_s3)) {
+    axiosInstance
+      .get(productData.description_s3)
+      .then((res) => setProductDescription(res.data))
+      .catch((err) => console.log(err));
   }
 
   if (reviewIsLoading || productIsLoading) return <CircularProgress />;
@@ -96,10 +88,9 @@ const ProductViewContainer: NextPage<{
         <Image
           className="relative w-[32rem] h-[32rem] shrink-0 object-cover"
           alt=""
-          src={productImage}
-          onError={() => {
-            setProductImage(testimg);
-          }}
+          width={187.5}
+          height={187.5}
+          src={productData ? productData.title_image_s3 : productImage}
         />
         <div className="self-stretch overflow-hidden flex flex-col py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem]">
           <div className="relative text-[2rem] text-left">
