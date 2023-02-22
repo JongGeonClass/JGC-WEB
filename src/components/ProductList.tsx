@@ -48,7 +48,9 @@ const ProductList: NextPage<{
             <Image
               className="relative w-[18.75rem] h-[18.75rem] shrink-0 object-cover"
               alt=""
-              src={testimg1}
+              src={product.title_image_s3}
+              width={187.5}
+              height={187.5}
             />
             <div className="overflow-hidden flex flex-col items-center justify-start gap-[0.94rem] text-black">
               <div className="relative font-medium">{product.name}</div>
