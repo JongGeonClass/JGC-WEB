@@ -20,7 +20,9 @@ const ProductContainer: NextPage<CartItem> = ({
         <Image
           className="relative rounded-sm w-[8rem] h-[8rem] shrink-0 object-cover"
           alt=""
-          src={testimg1}
+          src={title_image_s3}
+          width={187.5}
+          height={187.5}
         />
         <div className="overflow-hidden flex flex-col py-[0.94rem] px-[0rem] items-start justify-center gap-[0.31rem]">
           <div className="relative text-[1.25rem] font-medium">

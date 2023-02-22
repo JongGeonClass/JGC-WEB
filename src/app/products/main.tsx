@@ -30,13 +30,13 @@ const Main = () => {
           {isCategorySelected || (
             <ProductListContainer
               title="추천 상품"
-              pagination={{ page: 1, pageSize: 4 }}
+              pagination={{ page: 0, pageSize: 4 }}
               accent
             />
           )}
           <ProductListContainer
             title="상품 목록"
-            pagination={{ page: 1, pageSize: 4 }}
+            pagination={{ page: 0, pageSize: 4 }}
             category={category}
             stack={isCategorySelected}
           />
