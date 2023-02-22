@@ -11,8 +11,7 @@ const Main = () => {
         <div className="relative font-light">누구를 위한 차량인가요?</div>
 
         <div className="self-stretch overflow-hidden flex flex-row p-[0.63rem] items-center justify-center gap-[9.38rem] text-[1.25rem]">
-
-          <Link href="/pbv/personal">
+          <Link href="/pbv/personal" className="[text-decoration:none]">
             <button
               className="cursor-pointer [border:none] p-0 bg-[transparent] overflow-hidden flex flex-col items-center justify-center gap-[0.94rem]"
               autoFocus
@@ -28,7 +27,7 @@ const Main = () => {
             </button>
           </Link>
 
-          <Link href="/pbv/enterprise">
+          <Link href="/pbv/enterprise" className="[text-decoration:none]">
             <button
               className="cursor-pointer [border:none] p-0 bg-[transparent] overflow-hidden flex flex-col items-center justify-center gap-[0.94rem] "
               autoFocus
@@ -39,12 +38,12 @@ const Main = () => {
                   alt=""
                   src={enterpriseUsage}
                 />
-                <div className="relative text-[1.25rem] font-noto-sans-kr text-black text-left">기업용</div>
+                <div className="relative text-[1.25rem] font-noto-sans-kr text-black text-left">
+                  기업용
+                </div>
               </div>
             </button>
           </Link>
-
-
         </div>
       </div>
     </div>
