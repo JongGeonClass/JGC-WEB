@@ -40,6 +40,11 @@ export interface Review {
   created_time: string;
 }
 
+export interface PBVData {
+  type?: "personal" | "enterprise";
+  purpose?: string;
+}
+
 export interface HttpError extends Record<string, any> {
   message: string;
   statusCode: number;

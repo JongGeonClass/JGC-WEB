@@ -10,11 +10,11 @@ const JGCCustomPBVBanner = () => {
         alt=""
         src={background}
       />
-      <div className="absolute top-[8.19rem] left-[46.81rem] font-light">
-        맞춤형 PBV 커스터마이징 
+      <div className="absolute top-[8.19rem] left-[46rem] font-light">
+        맞춤형 PBV 커스터마이징
       </div>
     </div>
   );
-}
+};
 
 export default JGCCustomPBVBanner;

@@ -1,3 +1,6 @@
+"use client";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { PBVData } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,13 +8,20 @@ import enterpriseUsage from "public/enterpriseUsage.png";
 import personalUsage from "public/personalUsage.png";
 
 const Main = () => {
+  const [_, setPbvType] = useLocalStorage<PBVData>("pbv", {});
   return (
     <div className="self-stretch flex-1 overflow-hidden flex flex-col py-[0.63rem] px-[0rem] items-center justify-center text-[2rem]">
       <div className="flex-1 w-[81.25rem] overflow-hidden flex flex-col p-[0.63rem] box-border items-center justify-center gap-[3.13rem]">
         <div className="relative font-light">누구를 위한 차량인가요?</div>
 
         <div className="self-stretch overflow-hidden flex flex-row p-[0.63rem] items-center justify-center gap-[9.38rem] text-[1.25rem]">
-          <Link href="/pbv/personal" className="[text-decoration:none]">
+          <Link
+            href="/pbv/personal"
+            className="[text-decoration:none]"
+            onClick={() => {
+              setPbvType({ type: "personal" });
+            }}
+          >
             <button
               className="cursor-pointer [border:none] p-0 bg-[transparent] overflow-hidden flex flex-col items-center justify-center gap-[0.94rem]"
               autoFocus
@@ -27,7 +37,13 @@ const Main = () => {
             </button>
           </Link>
 
-          <Link href="/pbv/enterprise" className="[text-decoration:none]">
+          <Link
+            href="/pbv/enterprise"
+            className="[text-decoration:none]"
+            onClick={() => {
+              setPbvType({ type: "enterprise" });
+            }}
+          >
             <button
               className="cursor-pointer [border:none] p-0 bg-[transparent] overflow-hidden flex flex-col items-center justify-center gap-[0.94rem] "
               autoFocus
