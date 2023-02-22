@@ -3,17 +3,13 @@
 import ImageBox from "@/components/ImageBox";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { PBVData } from "@/types";
-import { useRouter } from "next/navigation";
 import car from "public/car.png";
 import fire from "public/fire.png";
 import plane from "public/plane.png";
 
 const Main = () => {
   const [pbvType, setPbvType] = useLocalStorage<PBVData>("pbv", {});
-  const router = useRouter();
-  if (!pbvType.type) {
-    router.push("/pbv");
-  }
+
   return (
     <div className="self-stretch flex-1 overflow-hidden flex flex-col py-[0.63rem] px-[0rem] items-center justify-center text-[2rem]">
       <div className="flex-1 w-[81.25rem] overflow-hidden flex flex-col p-[0.63rem] box-border items-center justify-center gap-[3.13rem]">

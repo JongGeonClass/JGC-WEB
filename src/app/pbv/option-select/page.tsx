@@ -1,7 +1,6 @@
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import JGCCustomPBVBanner from "src/components/JGCCustomPBVBanner";
-import CarOptionsContainer from "src/components/CarOptionsContainer";
 import Main from "./main";
 
 const JGCCustomPBVSelect = () => {

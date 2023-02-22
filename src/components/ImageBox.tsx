@@ -1,4 +1,3 @@
-"use client";
 import Image, { StaticImageData } from "next/image";
 import { PBVData } from "@/types";
 import Link from "next/link";

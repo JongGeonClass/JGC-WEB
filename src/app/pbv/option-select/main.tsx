@@ -1,6 +1,5 @@
 "use client";
 import CarOptionsContainer from "@/components/CarOptionsContainer";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { PBVData } from "@/types";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
