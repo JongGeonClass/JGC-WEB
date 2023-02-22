@@ -24,12 +24,6 @@ const Header: NextPage = () => {
         >
           커스텀 PBV
         </Link>
-        <Link
-          className="relative text-[inherit] [text-decoration:none]"
-          href=""
-        >
-          중고 거래
-        </Link>
       </div>
       <div className="flex flex-1 flex-row items-center justify-end gap-[3.13rem] self-stretch overflow-hidden py-[0.63rem] px-[1.88rem]">
         {authData.isAuthenticated ? (
